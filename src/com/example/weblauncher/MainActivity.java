@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.view.KeyEvent;
 //import android.view.Menu;
 //import android.view.MenuItem;
@@ -20,7 +19,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
  
 		mWebView = (WebView) findViewById(R.id.activity_main_webview);
-		mWebView.setWebViewClient(new WebViewClient());
+		mWebView.setWebViewClient(new MyWebViewClient());
 		WebSettings webSettings = mWebView.getSettings();
 		webSettings.setJavaScriptEnabled(true);
 		

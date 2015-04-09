@@ -6,10 +6,19 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class MyWebViewClient extends WebViewClient {
+    private String webUrl;
+    
+    public MyWebViewClient(){
+        webUrl = "";
+    }
+    
+    public MyWebViewClient(String url){
+        this.webUrl = url;
+    }
     
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        if(Uri.parse(url).getHost().contains("gamefaqs.com")) {
+        if(Uri.parse(url).getHost().contains(webUrl)) {
             return false;
         }
          

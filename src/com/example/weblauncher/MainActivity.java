@@ -12,9 +12,11 @@ import android.view.KeyEvent;
 
 public class MainActivity extends Activity {
 	private WebView mWebView;
+	private String url;
 	
 	@Override 
 	public void onCreate(Bundle savedInstanceState) {
+		url = "www.gamefaqs.com";
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
  
@@ -23,7 +25,7 @@ public class MainActivity extends Activity {
 		WebSettings webSettings = mWebView.getSettings();
 		webSettings.setJavaScriptEnabled(true);
 		
-		mWebView.loadUrl("http://www.gamefaqs.com/");
+		mWebView.loadUrl("http://"+url);
 	}
 	
 	@Override

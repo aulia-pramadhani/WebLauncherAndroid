@@ -17,6 +17,12 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Android Project
+*.class
+*.apk
+*.ap_
+*.dex
+
 # =========================
 # Operating System Files
 # =========================

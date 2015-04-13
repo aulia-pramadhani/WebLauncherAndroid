@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
  
-		loadWebView(this.url);
+		loadWebView();
 	}
 	
 	@Override
@@ -75,7 +75,7 @@ public class MainActivity extends Activity {
 		 */
 		
 		loadSetting();
-		loadWebView(this.url);
+		loadWebView();
 	 }
 	 
 	 private void loadSetting(){
@@ -85,12 +85,12 @@ public class MainActivity extends Activity {
 
 	}
 	 
-	 private void loadWebView(String url){
+	 private void loadWebView(){
 		mWebView = (WebView) findViewById(R.id.activity_main_webview);
-		mWebView.setWebViewClient(new MyWebViewClient(url));
+		mWebView.setWebViewClient(new MyWebViewClient(this.url));
 		WebSettings webSettings = mWebView.getSettings();
 		webSettings.setJavaScriptEnabled(true);
 		
-		mWebView.loadUrl("http://"+url);
+		mWebView.loadUrl("http://"+this.url);
 	 }
 }

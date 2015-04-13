@@ -16,6 +16,10 @@ OnSharedPreferenceChangeListener{
 	  
 	  // Load the preferences from an XML resource
 	        addPreferencesFromResource(R.xml.settings);
+
+			Preference pref = findPreference("webUrl");
+            EditTextPreference etp = (EditTextPreference) pref;
+            pref.setSummary("Current url: "+etp.getText());       
 	 }
 
 	@Override
